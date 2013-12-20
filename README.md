@@ -19,7 +19,7 @@ We're going to do it in two steps. First, we'll to build a dumb version which do
 * [Play Boggle online](http://www.wordplays.com/boggle)
 
 ## Learning Goals
-* Modeling a simple real-world procedure in Ruby
+* Model a simple real-world procedure in Ruby.
 * Method definition, arguments, and return values
 * Common string methods
 * Internal representation vs. display representation
@@ -31,13 +31,13 @@ We're going to do it in two steps. First, we'll to build a dumb version which do
 
 ## Objectives
 
-### Stupid Boggle Board
+### Simple Boggle Board
 
 Our `BoggleBoard` class has one core instance method: `shake!`
 
 For the first step, focus on how you represent the board. `shake!` should modify the board, filling each cell with a random upper-case letter `A-Z`.
 
-There are no other restrictions on the letters. They can appear multiple times, for example. Just pick a flippin' random letter and don't sweat it, ok?
+There are no other restrictions on the letters. They can appear multiple times, for example. Just pick a random letter and don't sweat it.
 
 I also know you're worrying about how "Q" is always "Qu" in Boggle. Stop! Just let it be "Q" for now.
 
@@ -103,7 +103,7 @@ DEILRX
 
 Assuming we want "Qu" to be printed rather than "Q", how could we make that happen?
 
-There are several ways of making this happen, especially if you keep in mind that how the board appears to the computer &mdash; how it's represented in your program &mdash; doesn't have to be how it appears to the person using the program.
+There are several ways of making this happen, especially if you keep in mind that how the board appears to the computer–how it's represented in your program–doesn't have to be how it appears to the person using the program.
 
 Consider a few ways to make "Qu" print instead of just "Q", deliberate on the tradeoffs for a few minutes, and implement one. You'll probably want to change how the board is printed, too, since "Qu" will throw everything out of alignment.
 
