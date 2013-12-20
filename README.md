@@ -1,18 +1,18 @@
-# Boggle 1 Basic Board Generation 
- 
-##Learning Competencies 
+# Boggle 1 Basic Board Generation
 
-##Summary 
+##Learning Competencies
 
- We're going to create a basic Boggle board generator.  Read about [Boggle on Wikipedia](http://en.wikipedia.org/wiki/Boggle) if you're not familiar with the game.
+##Summary
+
+We're going to create a basic Boggle board generator. Read about [Boggle on Wikipedia](http://en.wikipedia.org/wiki/Boggle) if you're not familiar with the game.
 
 Boggle is a simple game, but when you get down into it there are some subtleties.
 
-First, we're only going to model the first part of boggle, where you place the Boggle dice and shake them around to create the initial board.  To imagine what that might look like, visualize a blank 4x4 grid with a button next to it.  When you push the button a letter appears in each of the 16 cells and you can begin playing Boggle.
+First, we're only going to model the first part of boggle, where you place the Boggle dice and shake them around to create the initial board. To imagine what that might look like, visualize a blank 4x4 grid with a button next to it. When you push the button a letter appears in each of the 16 cells and you can begin playing Boggle.
 
-We're going to do it in two steps.  First, we'll to build a dumb version which doesn't care at all about whether it's likely that the Boggle board will have English words.  Second, we'll build a version that models the dice.
+We're going to do it in two steps. First, we'll to build a dumb version which doesn't care at all about whether it's likely that the Boggle board will have English words. Second, we'll build a version that models the dice.
 
-**Please Note:** Start with sample code from the original gist above.  It gives a hint on class structure and internal methods.  
+**Please Note:** Start with sample code from the original gist above. It gives a hint on class structure and internal methods.
 
 ## External Resources
 * [Boggle on Wikipedia](http://en.wikipedia.org/wiki/Boggle)
@@ -35,11 +35,11 @@ We're going to do it in two steps.  First, we'll to build a dumb version which d
 
 Our `BoggleBoard` class has one core instance method: `shake!`
 
-For the first step, focus on how you represent the board.  `shake!` should modify the board, filling each cell with a random upper-case letter `A-Z`.
+For the first step, focus on how you represent the board. `shake!` should modify the board, filling each cell with a random upper-case letter `A-Z`.
 
-There are no other restrictions on the letters.  They can appear multiple times, for example.  Just pick a flippin' random letter and don't sweat it, ok?
+There are no other restrictions on the letters. They can appear multiple times, for example. Just pick a flippin' random letter and don't sweat it, ok?
 
-I also know you're worrying about how "Q" is always "Qu" in Boggle.  Stop!  Just let it be "Q" for now.
+I also know you're worrying about how "Q" is always "Qu" in Boggle. Stop! Just let it be "Q" for now.
 
 We want to write code that works like this:
 
@@ -74,11 +74,11 @@ puts board
 
 ### Smart(er) Boggle Board
 
-We need to model the dice, now.  Think carefully about how shaking a Boggle board works.  Each die lands in one and only one cell, with one side facing up.
+We need to model the dice, now. Think carefully about how shaking a Boggle board works. Each die lands in one and only one cell, with one side facing up.
 
-Can you think of a way to model a die landing in only one cell without explicitly keeping track of which dice have landed and which haven't?  One way to do this is using a secondary `Array`, can you think of another?
+Can you think of a way to model a die landing in only one cell without explicitly keeping track of which dice have landed and which haven't? One way to do this is using a secondary `Array`, can you think of another?
 
-We'll still only have one core method, `BoggleBoard#shake!`.  Here's a list of Boggle dice, with "Q" representing "Qu":
+We'll still only have one core method, `BoggleBoard#shake!`. Here's a list of Boggle dice, with "Q" representing "Qu":
 
 ```text
 AAEEGN
@@ -105,23 +105,23 @@ Assuming we want "Qu" to be printed rather than "Q", how could we make that happ
 
 There are several ways of making this happen, especially if you keep in mind that how the board appears to the computer &mdash; how it's represented in your program &mdash; doesn't have to be how it appears to the person using the program.
 
-Consider a few ways to make "Qu" print instead of just "Q", deliberate on the tradeoffs for a few minutes, and implement one.  You'll probably want to change how the board is printed, too, since "Qu" will throw everything out of alignment.
+Consider a few ways to make "Qu" print instead of just "Q", deliberate on the tradeoffs for a few minutes, and implement one. You'll probably want to change how the board is printed, too, since "Qu" will throw everything out of alignment.
 
 For example, something like this might be appropriate:
 
 ```text
 > puts board.shake!
-U  N  O  T  
-S  E  W  G  
-S  V  L  T  
+U  N  O  T
+S  E  W  G
+S  V  L  T
 L  Qu C  F
 ```
 
-Check out the [String#ljust](http://www.ruby-doc.org/core-1.9.3/String.html#method-i-ljust) method for an easy way to add the right amount of space for display. 
+Check out the [String#ljust](http://www.ruby-doc.org/core-1.9.3/String.html#method-i-ljust) method for an easy way to add the right amount of space for display.
 
 ##Releases
-###Release 0 
+###Release 0
 
-##Optimize Your Learning 
+##Optimize Your Learning
 
 ##Resources
