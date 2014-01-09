@@ -2,6 +2,11 @@
 
 ##Learning Competencies
 
+* Model a simple real-world procedure in Ruby.
+* Method definition, arguments, and return values
+* Common string methods
+* Internal representation vs. display representation
+
 ##Summary
 
 We're going to create a basic Boggle board generator. Read about [Boggle on Wikipedia](http://en.wikipedia.org/wiki/Boggle) if you're not familiar with the game.
@@ -14,24 +19,9 @@ We're going to do it in two steps. First, we'll to build a dumb version which do
 
 **Please Note:** Start with sample code from the original gist above. It gives a hint on class structure and internal methods.
 
-## External Resources
-* [Boggle on Wikipedia](http://en.wikipedia.org/wiki/Boggle)
-* [Play Boggle online](http://www.wordplays.com/boggle)
+##Releases
 
-## Learning Goals
-* Model a simple real-world procedure in Ruby.
-* Method definition, arguments, and return values
-* Common string methods
-* Internal representation vs. display representation
-
-## As you're coding, ask yourself...
-* Do I have a clear understanding of how this procedure works?
-* Am I stuck because I know what I want to do but don't know how to say it in Ruby?
-* Am I stuck because my understanding of how Boggle works is too fuzzy or mistaken?
-
-## Objectives
-
-### Simple Boggle Board
+###Release 0 : Simple Boggle Board
 
 Our `BoggleBoard` class has one core instance method: `shake!`
 
@@ -72,7 +62,7 @@ puts board
 # MHCU
 ```
 
-### Smart(er) Boggle Board
+###Release 1 : Smart(er) Boggle Board
 
 We need to model the dice, now. Think carefully about how shaking a Boggle board works. Each die lands in one and only one cell, with one side facing up.
 
@@ -99,11 +89,11 @@ HLNNRZ
 DEILRX
 ```
 
-### Dealing with Q
+###Release 2 : Dealing with Q
 
 Assuming we want "Qu" to be printed rather than "Q", how could we make that happen?
 
-There are several ways of making this happen, especially if you keep in mind that how the board appears to the computer–how it's represented in your program–doesn't have to be how it appears to the person using the program.
+There are several ways of making this happen, especially if you keep in mind that how the board appears to the computer, how it's represented in your program, doesn't have to be how it appears to the person using the program.
 
 Consider a few ways to make "Qu" print instead of just "Q", deliberate on the tradeoffs for a few minutes, and implement one. You'll probably want to change how the board is printed, too, since "Qu" will throw everything out of alignment.
 
@@ -119,9 +109,17 @@ L  Qu C  F
 
 Check out the [String#ljust](http://www.ruby-doc.org/core-1.9.3/String.html#method-i-ljust) method for an easy way to add the right amount of space for display.
 
-##Releases
-###Release 0
 
 ##Optimize Your Learning
 
+As you're coding, ask yourself:
+  * Do I have a clear understanding of how this procedure works?
+  * Am I stuck because I know what I want to do but don't know how to say it in Ruby?
+  * Am I stuck because my understanding of how Boggle works is too fuzzy or mistaken?
+
+
 ##Resources
+
+* [Boggle on Wikipedia](http://en.wikipedia.org/wiki/Boggle)
+* [Play Boggle online](http://www.wordplays.com/boggle)
+* [String#ljust](http://www.ruby-doc.org/core-1.9.3/String.html#method-i-ljust)
