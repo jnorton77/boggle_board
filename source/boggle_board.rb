@@ -1,7 +1,22 @@
 class BoggleBoard
   attr_accessor :board
 
-  ALPHA = ("A".."Z").to_a
+  DICE = [ 'AAEEGN',
+           'ELRTTY',
+           'AOOTTW',
+           'ABBJOO',
+           'EHRTVW',
+           'CIMOTU',
+           'DISTTY',
+           'EIOSST',
+           'DELRVY',
+           'ACHOPS',
+           'HIMNQU',
+           'EEINSU',
+           'EEGHNW',
+           'AFFKPS',
+           'HLNNRZ',
+           'DEILRX'  ].map(&:chars)
 
   def initialize
     @board = Array.new(4) {Array.new(4, '_')}
@@ -12,17 +27,9 @@ class BoggleBoard
   end
 
   def new_board
-    ALPHA.sample(16).each_slice(4).to_a
+    DICE.shuffle.map(&:sample).each_slice(4).to_a
   end
-  # Defining to_s on an object controls how the object is
-  # represented as a string, e.g., when you pass it to puts
-  #
-  # Override this to print out a sensible board format so
-  # you can write code like:
-  #
-  # board = BoggleBoard.new
-  # board.shake!
-  # puts board
+
   def to_s
     board.inject('') {|str,row| str << "#{row.join(' ')}\n" } + "\n"
   end
