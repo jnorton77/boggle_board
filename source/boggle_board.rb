@@ -23,11 +23,16 @@ class BoggleBoard
   end
 
   def shake!
-    self.board = new_board
+    self.board = DICE.shuffle.map{ |die_arr| roll(die_arr) }.each_slice(4).to_a
   end
 
-  def new_board
-    DICE.shuffle.map(&:sample).each_slice(4).to_a
+  def roll(die)
+    result = die.sample
+    if result == "Q"
+      "Qu"
+    else
+      result.ljust(2)
+    end
   end
 
   def to_s
