@@ -24,9 +24,7 @@ class BoggleBoard
   # board.shake!
   # puts board
   def to_s
-    str = ''
-    board.each {|row| str << "#{row.join(' ')}\n" }
-    str << "\n"
+    board.inject('') {|str,row| str << "#{row.join(' ')}\n" } + "\n"
   end
 end
 
